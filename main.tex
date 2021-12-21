@@ -1,0 +1,42 @@
+% main.tex -- parent TeX file
+\documentclass[a4paper,uplatex]{jsreport}
+
+%画像の設定
+\usepackage[dvipdfmx]{graphicx} %画像を貼る
+\usepackage{float} %画像の位置
+
+
+\usepackage[dvipdfmx]{hyperref} %リンクとその設定
+\usepackage{pxjahyper}
+\hypersetup{ setpagesize=false, bookmarksnumbered=true, bookmarksopen=true, colorlinks=false, linkcolor=black, citecolor=black, }
+
+%便利なコマンド
+\usepackage{url} %URLコマンド\usl
+\usepackage{siunitx} %SI単位コマンド\si
+\usepackage[version=3]{mhchem} %化学式コマンドce
+\usepackage{bm} %ベクトル太字
+
+\begin{document}
+
+\title{オレの研究\thanks{修士論文}}
+\author{オレ\thanks{オレの大学}}
+\date{\today} %date \today or 2100/01/01
+
+\maketitle %タイトル
+\tableofcontents %目次
+%\listoffigures %図目次
+%\listoftables %表目次
+
+%アブスト
+\input{tex/abstract.tex}
+
+%本文
+\input{tex/introduction.tex}%ひとつめ
+\input{tex/sample.tex}%ふたつめ
+\input{tex/conclusion.tex}%みっつめ
+
+%参考文献
+\bibliographystyle{myjunsrt} %参考文献スタイル,多すぎる著者を略すよう調整
+\bibliography{reference} %reference.bib を読む
+
+\end{document}

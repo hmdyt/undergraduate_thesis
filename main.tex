@@ -8,7 +8,7 @@
 
 \usepackage[dvipdfmx]{hyperref} %リンクとその設定
 \usepackage{pxjahyper}
-\hypersetup{ setpagesize=false, bookmarksnumbered=true, bookmarksopen=true, colorlinks=false, linkcolor=black, citecolor=black, }
+\hypersetup{setpagesize=false, bookmarksnumbered=true, bookmarksopen=true, colorlinks=false, linkcolor=black, citecolor=black, }
 
 %便利なコマンド
 \usepackage{url} %URLコマンド\usl
@@ -18,8 +18,11 @@
 
 \begin{document}
 
-\title{オレの研究\thanks{修士論文}}
-\author{オレ\thanks{オレの大学}}
+\title{宇宙線ミューオンが起こす光生成反応の探索}
+\author{1843105s 安 博充\\
+        18xxxxxs 山下 智愛\\
+        18xxxxxs 濱田 悠斗
+}
 \date{\today} %date \today or 2100/01/01
 
 \maketitle %タイトル
@@ -31,9 +34,14 @@
 \input{tex/abstract.tex}
 
 %本文
-\input{tex/introduction.tex}%ひとつめ
-\input{tex/sample.tex}%ふたつめ
-\input{tex/conclusion.tex}%みっつめ
+\input{tex/introduction.tex}
+\input{tex/theory.tex}
+\input{tex/equipment.tex}
+\input{tex/simulation.tex}
+\input{tex/preparation.tex}
+\input{tex/analysis.tex}
+\input{tex/conclusion.tex}
+\input{tex/acknowledgements.tex}
 
 %参考文献
 \bibliographystyle{myjunsrt} %参考文献スタイル,多すぎる著者を略すよう調整

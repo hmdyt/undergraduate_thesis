@@ -6,7 +6,7 @@ on:
 jobs:
   test_job:
     runs-on: ubuntu-latest
-    name: Example of compiling pdf
+    name: compile pdf
     steps:
       # make pdf
       # LATEX_FILE_NAME -> main.pdf generated

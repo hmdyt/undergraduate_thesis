@@ -4,7 +4,6 @@
 %画像の設定
 \usepackage[dvipdfmx]{graphicx} %画像を貼る
 \usepackage{float} %画像の位置
-\usepackage{here}
 
 
 \usepackage[dvipdfmx]{hyperref} %リンクとその設定
@@ -19,11 +18,8 @@
 
 \begin{document}
 
-\title{宇宙線ミューオンが起こす光生成反応の探索}
-\author{1843105s 安 博充\\
-        1863126s 山下 智愛\\
-        1823185s 濱田 悠斗
-}
+\title{オレの研究\thanks{修士論文}}
+\author{オレ\thanks{オレの大学}}
 \date{\today} %date \today or 2100/01/01
 
 \maketitle %タイトル
@@ -32,17 +28,12 @@
 %\listoftables %表目次
 
 %アブスト
-\input{tex/abstract.tex}
+\input{tex_example/abstract.tex}
 
 %本文
-\input{tex/introduction.tex}
-\input{tex/theory.tex}
-\input{tex/equipment.tex}
-\input{tex/simulation.tex}
-\input{tex/preparation.tex}
-\input{tex/analysis.tex}
-\input{tex/conclusion.tex}
-\input{tex/acknowledgements.tex}
+\input{tex_example/introduction.tex}%ひとつめ
+\input{tex_example/sample.tex}%ふたつめ
+\input{tex_example/conclusion.tex}%みっつめ
 
 %参考文献
 \bibliographystyle{myjunsrt} %参考文献スタイル,多すぎる著者を略すよう調整

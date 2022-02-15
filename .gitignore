@@ -277,3 +277,6 @@ TSWLatexianTemp*
 
 # ignore output file
 out/
+
+# macOS
+.DS_Store

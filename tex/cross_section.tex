@@ -27,7 +27,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/diagram_momentum.png}
+    \includegraphics[height=5cm]{img/diagram_momentum.png}
     \caption{ハドロン中間状態と核子と光子の図}
     \label{fig:test2}
 \end{figure}
@@ -44,11 +44,11 @@ $E_\gamma \geq 0.23 GeV$となる。
 そのため$E_\mu = 1.5$ GeV とおく。
 また$E_\mu = 1.5$ GeV 以上となる$\mu$ の割合Rは$R \approx 0.56$ と頻度が高めである。\ref{fig:test3}
 
-参考文献入れる。。。。。。。。。。。。。。。。。。。
+参考文献入れる。。。。
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/cosimic_ray_energy_distribution.png}
+    \includegraphics[height=5cm]{img/cosimic_ray_energy_distribution.png}
     \caption{宇宙線$\mu$のエネルギー分布}
     \label{fig:test3}
 \end{figure}
@@ -78,7 +78,7 @@ $Q^2$を運動量移行の2乗の負数とした。
 $\Phi$の積分前の関数は下のようになる。\ref{fig:test4}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/flux_fixed_y.png}
+    \includegraphics[height=5cm]{img/flux_fixed_y.png}
     \caption{$\dfrac{d\Phi ^2}{dydQ^2}$ のyを定数としたグラフ}
     \label{fig:test4}
 \end{figure}
@@ -88,31 +88,31 @@ $\Phi$の積分前の関数は下のようになる。\ref{fig:test4}
 
 
 \section{断面積の計算に用いる近似}
-$E_gamma = [300, 500]$MeVと仮定する。
-下図を用いて$\gamma$とNの反応断面積$\sigma{tot}\gamma^* N$を
-$\sigma{tot}\gamma^* N = 0.3$ mbと近似する。\ref*{fig:test5}
+$E_\gamma = [300, 500]$MeVと仮定する。
+下図を用いて$\gamma$とNの反応断面積$\sigma_{tot}\gamma^* N$を
+$\sigma_{tot}\gamma^* N = 0.3$ mbと近似する。\ref*{fig:test5}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/sigma_tot.png}
+    \includegraphics[height=5cm]{img/sigma_tot.png}
     \caption{核子1個あたりの全光核反応断面積と光子のエネルギーの関係}
     \label{fig:test5}
 \end{figure}
 
-$E_mu = 1.5$GeV,$E_\gamma = [0.3, 0.5]$GeVの仮定からyの範囲は$y = [0.20, 0.33]$となる。
+$E_\mu = 1.5$GeV,$E_\gamma = [0.3, 0.5]$GeVの仮定からyの範囲は$y = [0.20, 0.33]$となる。
 
 
 \section{断面積に用いた式}
 $m_W$の関係式$m_W = \sqrt{m_p^2 + 2m_pE_\mu y - Q^2}$は
-$m_w = 1.08$GeVとした時、下のようになる。\ref{fig:test6}
+$m_W = 1.08$GeVとした時、下のようになる。\ref{fig:test6}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/W2_fixed_y.png}
+    \includegraphics[height=5cm]{img/W2_fixed_y.png}
     \caption{$m_W = \sqrt{m_p^2 + 2m_pE_\mu y - Q^2}$のyを固定した関係式}
     \label{fig:test6}
 \end{figure}
 
-$m_w = 1.08$GeVの直線とyの値ごとの直線が交わる$Q^2$の値が$Q^2$の最大値になりこの$Q^2$を$Q^2_{max}$とする。
+$m_W = 1.08$GeVの直線とyの値ごとの直線が交わる$Q^2$の値が$Q^2$の最大値になりこの$Q^2$を$Q^2_{max}$とする。
 
 よって、積分範囲は$y = [0.20, 0.33], Q^2 = [Q^2_{min}(y), Q^2_{max}(y)]$となる。
 
@@ -120,14 +120,14 @@ $\dfrac{d^2\sigma}{dydQ^2}$は次のようになる。\ref{fig:test7}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{img/integrate_flux_used_artile.png}
+    \includegraphics[width=8cm]{img/integrate_flux_used_artile.png}
     \caption{$\dfrac{d^2\sigma}{dydQ^2}$の3次元プロット}
     \label{fig:test7}
 \end{figure}
 
 これを積分すると、$\sigma \approx 3.3 \times 10^{-28} cm^2$となった。
 
-/section{予定する検出器でのイベント数の見積もり}
+\section{予定する検出器でのイベント数の見積もり}
 関係式
 \begin{equation}
     -dN =\dfrac{\rho N_A \sigma }{A}NRV
@@ -138,4 +138,7 @@ $-dN$を入射$\mu$の単位時間あたりの減少分、検出器の密度$\rh
 検出器の質量数$A = 12 g/mol$、検出器の有効体積$V = 7500cm^3$、
 単位時間・単位面積あたりの入射する$\mu$の数を$N = \dfrac{1}{10\times 10} 個/s\cdot cm^2$、
 1.5GeV以上のエネルギーを持ち$\mu$の割合を$R = 0.56$として代入すると
-$-dN \approx 5.3aaaaaa \times 10^{-3}(個/s)$となった。
+\begin{equation}
+    -dN \approx 5.3aaaaaa \times 10^{-3}(個/s)
+\end{equation}
+となった。

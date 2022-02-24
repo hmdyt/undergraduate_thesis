@@ -17,6 +17,9 @@
 \usepackage[version=3]{mhchem} %化学式コマンドce
 \usepackage{bm} %ベクトル太字
 
+\usepackage{biblatex}
+\addbibresource{reference.bib}
+
 \begin{document}
 
 \title{宇宙線ミューオンが起こす光生成反応の探索}
@@ -45,8 +48,6 @@
 \input{tex/conclusion.tex}
 \input{tex/acknowledgements.tex}
 
-%参考文献
-\bibliographystyle{myjunsrt} %参考文献スタイル,多すぎる著者を略すよう調整
-\bibliography{reference.bib} %reference.bib を読む
+\printbibliography[title = 参考文献]
 
 \end{document}

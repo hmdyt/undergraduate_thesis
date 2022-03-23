@@ -1,6 +1,19 @@
 \chapter{装置} \label{equipment}
 \section{探索装置の概要}
-今回の実験に用いた探索装置の概略図及び座標軸を図4.1に、全体図を図4.2に示す。
+今回の実験に用いた探索装置の概略図及び座標軸を図4.1に、Y方向から見た図を図4.2に示す。
+
+\begin{figure}[H]
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=3cm]{img/equipment.jpg}
+        \caption{探索装置の概略図}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=3cm]{img/equipment_y.jpg}
+        \caption{Y方向から見た装置}
+    \end{minipage}
+\end{figure}
 
 実験装置は、2cmのアルミ板を2cm間隔で8段積み上げている。
 アルミ板の各層には、通過粒子のxy平面での座標を特定するためプラスチックシンチレータを逆側に7度ずつ傾けたものを2層ずつ配置している。
@@ -18,6 +31,12 @@
 波長変換ファイバーはプラスチックシンチレータからの光を吸収し、光検出器の感度がいい波長(400～500nm)に変換する。
 直径1.2mmのものを使用し、装置両側の基盤に取り付けた光検出器に光を導いた。
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{img/Scinti.jpeg}
+    \caption{プラスチックシンチレータと光ファイバー}
+\end{figure}
+
 \subsection{MPPC}
 光検出器として、MPPC(Multi Pixel Photon Counter)を用いた。
 MPPCは受光面が複数のピクセルからなるフォトンカウンティングデバイスであり、高い増幅率を持つ半導体光検出器である。
@@ -26,17 +45,37 @@ MPPCは受光面が複数のピクセルからなるフォトンカウンティ�
 この波高から検出した光電子数を見積もることができる。
 このMPPC64個を基板に取り付け、ゴミコネクタを用いてプラスチックシンチレータの片側から出ている波長変換ファイバーと接続した。
 
+\begin{figure}[H]
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=3cm]{img/1_mppc.jpg}
+        \caption{MPPC}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=3cm]{img/avalanche.jpg}
+        \caption{アバランシェ増幅}
+    \end{minipage}
+\end{figure}
+
 \subsection{EASIROC}
 MPPCからの信号の読み出しにEASIROC(Extended Analogue Silicon PM Integrated Read Out Chip)を用いた。
 最大64chのMPPCへの電圧の印加や同時読み出しが可能である。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4.5cm]{img/mppc_easiroc.jpg}
+    \caption{EASIROCを用いて読み出したMPPCの信号}
+\end{figure}
+
 Amp、Shaper、Discriminator が内蔵されており、光電子数の情報をADC(Analog to Digital Converter)で、時間情報を TDC(Time to Digital Converter) で取得できる。
-MPPC にかける電圧はEASIROCによる全チャンネル一律の値のHV と、Input DACという値を入力することでコントロールした。
+MPPC にかける電圧はEASIROCによる全チャンネル一律の値の$HV$ と、Input DACという値を入力することでコントロールした。
 Input DACによりコントロールする電圧($V_i$)は、
 \begin{equation}
     V_i = -0.0195(InputDAC) + 9.4479
 \end{equation}
 である。
-また、$V_i$とHVとBias Voltage($V$)の関係は
+また、$V_i$と$HV$とBias Voltage($V$)の関係は
 \begin{equation}
     V = HV - V_i
 \end{equation}
@@ -45,19 +84,46 @@ InputDACを調整することで各MPPCへのBias Voltageを調整した。
 
 \subsection{トリガーシンチレータ}
 装置上部に、トリガーシンチレータとして厚さ1cm、長さ126cm、幅7cmのプラスチックシンチレータを3枚設置した。
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{img/Trigger.jpeg}
+    \caption{トリガーシンチレータの配置}
+\end{figure}
 
 \subsection{アルミ板}
 厚さ2cm、長さ100cm、幅30cmのアルミの板を2cm間隔で8段積み上げた。
 プラスチックシンチレータの間にアルミの板を用いたのは、装置の質量を稼ぎ反応を起こしやすくするためである。
 
 \section{データ取得のセットアップ}
-図4.?は今回の実験におけるデータ取得のセットアップである。
+図4.8は今回の実験におけるデータ取得のセットアップである。
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{img/setup.jpg}
+    \caption{データ取得のセットアップ}
+\end{figure}
 装置上部のトリガーシンチレータのいずれかに$\mu$粒子が入射したとき、データ取得が行われる。
 トリガー信号はBRoaDⅢに送られ、測定に必要なPeak Hold、T Stop、Accept信号が適切な時間遅延させられてEASIROCに送られている。
 Peak Holdに信号が入ると測定が開始され、T Stopに信号が入ると測定が止まり、Acceptに信号が入るまでが次の測定が始まらないインターバルの時間となっている。
 
 \section{MPPCにおけるゲインの個体差}
-MPPCの信号をEASIROCで見ると図4.?のようになる。
+MPPCの信号をEASIROCで見ると図4.9のようになる。
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{img/mppc_gain.jpg}
+    \caption{宇宙線$\mu$粒子のMPPCにおける信号}
+\end{figure}
 それぞれのMPPCに同じ電圧をかけても個体差により波高が異なるのでピークの位置も異なる。
 今回の実験では粒子が通ったと判定するためのしきい値を同じくらいの値で決定するために、宇宙線$\mu$粒子を用いてキャリブレーションを行い信号のピークの位置を揃えた。
-図4.?が揃える前のチャンネルごとのピークの位置で、図4.?が揃えた後の図である。
+図4.10が揃える前のチャンネルごとのピークの位置で、図4.11が揃えた後の図である。
+\begin{figure}[H]
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=4cm]{img/gain_before.jpg}
+        \caption{MPPC}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[height=4cm]{img/gain_after.jpg}
+        \caption{アバランシェ増幅}
+    \end{minipage}
+\end{figure}

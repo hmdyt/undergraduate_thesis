@@ -15,3 +15,10 @@ latexmk -pdfdvi -outdir=out
 git tag -a vX.X.X -m "commit comment"
 git push origin vX.X.X
 ```
+
+## script
+- 以下のコマンドで ./tex 以下のファイルの句読点を置換する
+  - 、。-> ,.
+```bash
+python3 script/replacer.py --all
+```

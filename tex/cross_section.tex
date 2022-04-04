@@ -1,91 +1,91 @@
 \chapter{散乱断面積の計算} \label{cha:cross_section}
-計算するための仮定や使用する式について説明し散乱断面積を導出し、予定する検出器でのイベント数の見積もりを行う。
+計算するための仮定や使用する式について説明し散乱断面積を導出し, 予定する検出器でのイベント数の見積もりを行う.
 
 \section{散乱断面積の計算に用いる仮定}
 \subsection{ハドロン系の質量の仮定}
-2粒子以上の多粒子状態に崩壊する場合、ハドロン中間状態の質量$m_W$ は バリオン数を保存し最も軽い2粒子の組み合わせである$\pi$ の質量$m_\pi$と陽子の質量 $m_p$の合計よりも大きくなければならない。
+2粒子以上の多粒子状態に崩壊する場合, ハドロン中間状態の質量$m_W$ は バリオン数を保存し最も軽い2粒子の組み合わせである$\pi$ の質量$m_\pi$と陽子の質量 $m_p$の合計よりも大きくなければならない.
 
 \begin{equation}
     m_W \geq m_\pi + m_p \approx 0.14 + 0.94 = 1.08 \ \mathrm{GeV}
 \end{equation}
-よって、ハドロン系の質量は$m_W \geq 1.08$ GeVを仮定する。
+よって, ハドロン系の質量は$m_W \geq 1.08$ GeVを仮定する.
 
 \subsection{光子のエネルギーの仮定}
-図\ref{fig:sigma1}のように核子と光子の四元運動量を考える。
+図\ref{fig:sigma1}のように核子と光子の四元運動量を考える.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5cm]{img/diagram_momentum.png}
     \caption{ハドロン中間状態と核子と光子の図}
     \label{fig:sigma1}
 \end{figure}
-核子、光子の四元運動量をそれぞれ$p_N$, $p_\gamma$とすると、
+核子, 光子の四元運動量をそれぞれ$p_N$, $p_\gamma$とすると,
 \begin{equation}
     p_N = (m_N, 0, 0),\  p_\gamma = (E_\gamma, 0,  E_\gamma)
 \end{equation}
-とかける。
+とかける.
 $m_W$との関係は
 \begin{equation}
     \label{eq2_2}
     m_W^2 = (p_N + p_\gamma)^2 = p_N^2 + 2p_N p_\gamma + p_\gamma^2
     = 2m_N E_\gamma + m_N^2
 \end{equation}
-$m_N$ = 0.94 GeVであるから、\ref{eq2_2}式を用いると$m_W$ = 1.08 GeV の時
+$m_N$ = 0.94 GeVであるから, \ref{eq2_2}式を用いると$m_W$ = 1.08 GeV の時
 \begin{equation}
     E_\gamma \approx 0.23 \ \mathrm{GeV}
 \end{equation}
-よって、光生成反応を観測するために必要な光子のエネルギー$E_\gamma$は
-$E_\gamma \geq 0.23 \ \mathrm{GeV}$となる。
+よって, 光生成反応を観測するために必要な光子のエネルギー$E_\gamma$は
+$E_\gamma \geq 0.23 \ \mathrm{GeV}$となる.
 
 
 \subsection{宇宙線$\mu$の仮定}
-宇宙線$\mu$ のエネルギー$E_\mu$ は$E_\gamma$ よりも遥かに大きいエネルギーを持つ必要がある。
-そのため$E_\mu = 1.5$ GeV とおく。
-また$E_\mu = 1.5$ GeV 以上となる$\mu$ の割合Rは図\ref{fig:sigma2}より$R \approx 0.56$ と頻度が高めである。
+宇宙線$\mu$ のエネルギー$E_\mu$ は$E_\gamma$ よりも遥かに大きいエネルギーを持つ必要がある.
+そのため$E_\mu = 1.5$ GeV とおく.
+また$E_\mu = 1.5$ GeV 以上となる$\mu$ の割合Rは図\ref{fig:sigma2}より$R \approx 0.56$ と頻度が高めである.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5cm]{img/cosimic_ray_energy_distribution.png}
     \caption{宇宙線$\mu$のエネルギー分布 \cite{cosmic_ray}}
     \label{fig:sigma2}
 \end{figure}
-$E_\mu$と散乱後の$\mu$のエネルギー$E'_\mu$ との比をyとして、その値は
+$E_\mu$と散乱後の$\mu$のエネルギー$E'_\mu$ との比をyとして, その値は
 \begin{equation}
     y = \dfrac{E_\mu - E'_\mu}{E_\mu} \approx 0.2
 \end{equation}
-となる。
+となる.
 
 \section{生成断面積の計算枠組み}
-$\mu$とNの散乱断面積$\sigma_{\mu N}$は$\mu$から$\gamma$を出す確率$\Phi$と、
-$\gamma$とNとの散乱断面積$\sigma_{tot}(\gamma^* N)$の積で表すことができる。
+$\mu$とNの散乱断面積$\sigma_{\mu N}$は$\mu$から$\gamma$を出す確率$\Phi$と,
+$\gamma$とNとの散乱断面積$\sigma_{tot}(\gamma^* N)$の積で表すことができる.
 \begin{equation}
     \sigma_{\mu N} =\int dy  \sigma_{tot}(\gamma^* N) \Phi
 \end{equation}
-$\Phi$は以下のように表される。
+$\Phi$は以下のように表される.
 \begin{equation}
     \Phi(y) = \dfrac{\alpha}{\pi y} \int \dfrac{dQ^2}{Q^2} [(1-y)(1 - \dfrac{Q^2_{min}}{Q^2}) + \dfrac{y^2}{2}]
 \end{equation}
-$Q^2 = - (k - k')^2 $を運動量移行の2乗の負数とした。
+$Q^2 = - (k - k')^2 $を運動量移行の2乗の負数とした.
 
 \section{\texorpdfstring{$\Phi$}{LG}の考察}\label{section2_3}
-$\Phi$の積分前の値はyを定数とすると図\ref{fig:sigma3}のようになる。
+$\Phi$の積分前の値はyを定数とすると図\ref{fig:sigma3}のようになる.
 \begin{figure}[H]
     \centering
     \includegraphics[height=7cm]{img/flux_fixed_y.png}
     \caption{$\dfrac{d\Phi ^2}{dydQ^2}$ のyを定数としたグラフ}
     \label{fig:sigma3}
 \end{figure}
-このグラフから$\Phi$はyが小さいところで大きくなる。つまり、$E_\mu$ が $E_\gamma$より遥かに大きくなるところで$\sigma_{\mu N}$が大きくなる。
-また、$Q^2$が小さくなるところで大きくなっている。$Q^2$は0でない最小値を持つ。この最小値を$Q^2_{\mathrm{min}}(y)$とすると、以下のように表される。
+このグラフから$\Phi$はyが小さいところで大きくなる.つまり, $E_\mu$ が $E_\gamma$より遥かに大きくなるところで$\sigma_{\mu N}$が大きくなる.
+また, $Q^2$が小さくなるところで大きくなっている.$Q^2$は0でない最小値を持つ.この最小値を$Q^2_{\mathrm{min}}(y)$とすると, 以下のように表される.
 \begin{equation}
     \label{eq2_8}
     Q^2_{\mathrm{min}} = \dfrac{m_p^2 y^2}{1-y}
 \end{equation}
 
 \section{断面積の計算に用いる近似}
-\ref{section2_3}章で示したように断面積を概算するには y が小さいところを見積もればよいことがわかる。
-宇宙線ミューオンのエネルギーを 1.5 GeV としたことから、
-$0.2 < \mathrm{y} < 0.33$ に対応する $E_\gamma \in [300, 500]$ MeV の範囲の断面積を見積もる。
-図\ref{fig:sigma4}は核子1個あたりの全光核反応断面積と光子のエネルギーの関係であり、これを用いて$\gamma$とNの反応断面積$\sigma_{tot}(\gamma^* N)$を
-$\sigma_{tot}(\gamma^* N) = 0.3$ mbと近似する。
+\ref{section2_3}章で示したように断面積を概算するには y が小さいところを見積もればよいことがわかる.
+宇宙線ミューオンのエネルギーを 1.5 GeV としたことから,
+$0.2 < \mathrm{y} < 0.33$ に対応する $E_\gamma \in [300, 500]$ MeV の範囲の断面積を見積もる.
+図\ref{fig:sigma4}は核子1個あたりの全光核反応断面積と光子のエネルギーの関係であり, これを用いて$\gamma$とNの反応断面積$\sigma_{tot}(\gamma^* N)$を
+$\sigma_{tot}(\gamma^* N) = 0.3$ mbと近似する.
 \begin{figure}[H]
     \centering
     \includegraphics[height=7cm]{img/sigma_tot.png}
@@ -96,7 +96,7 @@ $E_\mu = 1.5 \mathrm{GeV}$,$E_\gamma \in [0.3, 0.5] \mathrm{GeV}$の仮定から
 \begin{equation}
     y = \dfrac{E_\gamma}{E_\mu}
 \end{equation}
-を用いることで$y \in [0.20, 0.33]$となる。
+を用いることで$y \in [0.20, 0.33]$となる.
 
 \section{\texorpdfstring{$yとQ^2$}{LG}の積分範囲}
 $m_W$の関係式
@@ -104,40 +104,40 @@ $m_W$の関係式
     m_W = \sqrt{m_p^2 + 2m_pE_\mu y - Q^2}
 \end{equation}
 は
-$m_W = 1.08$GeVとした時、図\ref{fig:sigma5}のようになる。
+$m_W = 1.08$GeVとした時, 図\ref{fig:sigma5}のようになる.
 \begin{figure}[H]
     \centering
     \includegraphics[height=7cm]{img/W2_fixed_y.png}
     \caption{$m_W = \sqrt{m_p^2 + 2m_pE_\mu y - Q^2}$のyを固定した関係式}
     \label{fig:sigma5}
 \end{figure}
-$m_W = 1.08$GeVの直線とyの値ごとの直線が交わる$Q^2$の値が$Q^2$の最大値になるのでこれを$Q^2_{\mathrm{max}}$とする。
-よって、積分範囲は$y \in [0.20, 0.33], Q^2 \in [Q^2_{\mathrm{min}}(y), Q^2_{\mathrm{max}}(y)]$となる。
+$m_W = 1.08$GeVの直線とyの値ごとの直線が交わる$Q^2$の値が$Q^2$の最大値になるのでこれを$Q^2_{\mathrm{max}}$とする.
+よって, 積分範囲は$y \in [0.20, 0.33], Q^2 \in [Q^2_{\mathrm{min}}(y), Q^2_{\mathrm{max}}(y)]$となる.
 
 \section{断面積の計算}
-$\dfrac{d^2\sigma}{dydQ^2}$は図\ref{fig:sigma6}のようになる。
+$\dfrac{d^2\sigma}{dydQ^2}$は図\ref{fig:sigma6}のようになる.
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{img/integrate_flux_used_artile.png}
     \caption{$\dfrac{d^2\sigma}{dydQ^2}$の3次元プロット}
     \label{fig:sigma6}
 \end{figure}
-これを積分すると、断面積$\sigma$は、$\sigma \approx 3.3 \times 10^{-28} \ \mathrm{cm^2}$となった。
+これを積分すると, 断面積$\sigma$は, $\sigma \approx 3.3 \times 10^{-28} \ \mathrm{cm^2}$となった.
 
 \section{予定する検出器でのイベント数の見積もり}
 関係式
 \begin{equation}
     -dN =\dfrac{\rho N_A \sigma }{A}NRV
 \end{equation}
-から反応式を見積もる。
-$-dN$を入射$\mu$の単位時間あたりの減少分、検出器の密度$\rho = 1.0 \ \mathrm{g/cm^2}$、
-検出器の質量数$A = 12 \ \mathrm{g/mol}$、検出器の有効体積$V = 7500 \ \mathrm{cm^3}$、
-単位時間・単位面積あたりの入射する$\mu$の数を$N = \dfrac{1}{10\times 10} \ \mathrm{個/s\cdot cm^2}$、
+から反応式を見積もる.
+$-dN$を入射$\mu$の単位時間あたりの減少分, 検出器の密度$\rho = 1.0 \ \mathrm{g/cm^2}$,
+検出器の質量数$A = 12 \ \mathrm{g/mol}$, 検出器の有効体積$V = 7500 \ \mathrm{cm^3}$,
+単位時間・単位面積あたりの入射する$\mu$の数を$N = \dfrac{1}{10\times 10} \ \mathrm{個/s\cdot cm^2}$,
 1.5GeV以上のエネルギーを持つ$\mu$の割合を$R = 0.56$として代入すると
 \begin{equation}
     -dN \approx 4.4 \times 10^{-4} \ \mathrm{個/s}
 \end{equation}
-となった。
-このことから反応するイベントは$10^4$オーダーに1個であることがわかる。
+となった.
+このことから反応するイベントは$10^4$オーダーに1個であることがわかる.
 
-実際の実験での反応数の見積もりは、\ref{sec:anal:data}節で述べる。
+実際の実験での反応数の見積もりは, \ref{sec:anal:data}節で述べる.

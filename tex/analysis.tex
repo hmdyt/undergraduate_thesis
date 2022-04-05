@@ -19,8 +19,21 @@
 測定によって得られたデータは各チャンネル毎に12bit (4096段階) の強度を持っている.ここでは12bitを0から4095までの整数で表すことにし, その値のことを ADC value と呼ぶ.
 ADC value はMPPCから得られた信号をEASIROCが増幅, 整形しAD変換を行うことで得られた値である.
 ADC value はMPPCからの信号強度, すなわち荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC valueに適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
-シンチレータがエネルギーを受け取らなかった時のADC value は本実験で用いたEASIROCにおいては典型的に800付近であったため(TDOO: ペデスタルだけのhistの絵), ADC value 800付近からある程度離れた値をしきい値とすることにした.
-具体的には表(TODO: threshold-effeciencyの曲線)のようにADC value のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
+シンチレータがエネルギーを受け取らなかった時のADC value は本実験で用いたEASIROCにおいては典型的に800付近であったため, ADC value 800付近からある程度離れた値をしきい値とすることにした.
+具体的には図\ref{fig:adc_eff}のようにADC value のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
+図\ref{fig:adc_eff}, \ref{fig:threhist} の赤線は実験に用いたADC valueのしきい値を示している。
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5.0cm]{img/adc_eff.png}
+    \caption{しきい値と検出効率の関係}
+    \label{fig:adc_eff}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5.0cm]{img/pedestal.png}
+    \caption{宇宙線による ADC value の分布}
+    \label{fig:threhist}
+\end{figure}
 
 \section{ヒット情報の作成}
 \subsection{ヒット情報の作成方法}\label{subsec:anal:make_hit}

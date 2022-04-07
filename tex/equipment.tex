@@ -79,7 +79,7 @@ Amp, Shaper, Discriminator が内蔵されており, 光電子数の情報をADC
 図\ref{fig:easiroc}はMPPCにLEDの光をあて、EASIROCを用いて読み出した信号の例である。
 \\
 MPPC にかける電圧はEASIROCによる全チャンネル一律の値の$V_0$ と, Input DACという値を入力することでコントロールした.
-Input DACによりコントロールする電圧($V_i$)は, 
+Input DACによりコントロールする電圧($V_i$)は,
 \begin{equation}
     V_i = -0.0195(InputDAC) + 9.4479
 \end{equation}
@@ -116,8 +116,7 @@ InputDACを調整することで各MPPCへのBias Voltageを調整した.
 トリガー信号はBRoaDⅢに送られ, 測定に必要なPeak Hold, T Stop, Accept信号が適切な時間遅延させられてEASIROCに送られている.
 Peak Holdに信号が入ると測定が開始され, T Stopに信号が入ると測定が止まり, Acceptに信号が入るまでが次の測定が始まらないインターバルの時間となっている.
 
-\section{MPPCにおけるゲインの個体差}
-MPPCの信号をEASIROCで見ると図\ref{fig:mu_mppc}のようになる.
+\section{MPPCにおけるゲインの個体差}\label{sec:mppc_gain_diff}
 \begin{figure}[H]
     \centering
     \includegraphics[height=6cm]{img/mppc_gain.jpg}

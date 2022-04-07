@@ -16,7 +16,7 @@
 \end{table}
 
 \section{しきい値の設定}\label{sec:anal:threshold}
-\ref{sec:mppc_gain_diff}節の通り、ADC value はMPPCからの信号強度, すなわち荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC valueに適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
+\ref{sec:mppc_gain_diff}節の通り、ADC value は荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC valueに適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
 シンチレータがエネルギーを受け取らなかった時のADC value は本実験で用いたEASIROCにおいては典型的に800付近であったため(図\ref{fig:mu_mppc}, \ref{fig:threhist}), ADC value 800付近からある程度離れた値をしきい値とすることにした.
 具体的には図\ref{fig:adc_eff}のようにADC value のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
 図\ref{fig:adc_eff}, \ref{fig:threhist} の赤線は実験に用いたADC valueのしきい値を示している。

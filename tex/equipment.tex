@@ -37,6 +37,7 @@
     \centering
     \includegraphics[height=5cm]{img/Scinti.jpeg}
     \caption{プラスチックシンチレータと光ファイバー}
+    \label{fig:fiber}
 \end{figure}
 
 \subsection{MPPC}
@@ -52,11 +53,13 @@ MPPCは受光面が複数のピクセルからなるフォトンカウンティ�
         \centering
         \includegraphics[height=4.5cm]{img/1_mppc.jpg}
         \caption{MPPC}
+        \label{fig:mppc}
     \end{minipage}
     \begin{minipage}[b]{0.47\linewidth}
         \centering
         \includegraphics[height=4.5cm]{img/avalanche.jpg}
         \caption{アバランシェ増幅}
+        \label{fig:avalanche}
     \end{minipage}
 \end{figure}
 
@@ -68,9 +71,12 @@ MPPCからの信号の読み出しにEASIROC(Extended Analogue Silicon PM Integr
     \centering
     \includegraphics[height=5cm]{img/mppc_easiroc.jpg}
     \caption{EASIROCを用いて読み出したMPPCの信号}
+    \label{fig:easiroc}
 \end{figure}
 
 Amp, Shaper, Discriminator が内蔵されており, 光電子数の情報をADC(Analog to Digital Converter)で, 時間情報を TDC(Time to Digital Converter) で取得できる.
+\\
+図\ref{fig:easiroc}はMPPCにLEDの光をあて、EASIROCを用いて読み出した信号の例である。
 \\
 MPPC にかける電圧はEASIROCによる全チャンネル一律の値の$V_0$ と, Input DACという値を入力することでコントロールした.
 Input DACによりコントロールする電圧($V_i$)は, 
@@ -91,6 +97,7 @@ InputDACを調整することで各MPPCへのBias Voltageを調整した.
     \centering
     \includegraphics[height=5cm]{img/Trigger.jpeg}
     \caption{トリガーシンチレータの配置}
+    \label{fig:trigger}
 \end{figure}
 
 \subsection{アルミ板}
@@ -98,24 +105,26 @@ InputDACを調整することで各MPPCへのBias Voltageを調整した.
 プラスチックシンチレータの間にアルミの板を用いたのは, 装置の質量を稼ぎ反応を起こしやすくするためである.
 
 \section{データ取得のセットアップ}
-図4.8は今回の実験におけるデータ取得のセットアップである.
+図\ref{fig:setup}は今回の実験におけるデータ取得のセットアップである.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5cm]{img/setup.jpg}
     \caption{データ取得のセットアップ}
+    \label{fig:setup}
 \end{figure}
 装置上部のトリガーシンチレータのいずれかに$\mu$粒子が入射したとき, データ取得が行われる.
 トリガー信号はBRoaDⅢに送られ, 測定に必要なPeak Hold, T Stop, Accept信号が適切な時間遅延させられてEASIROCに送られている.
 Peak Holdに信号が入ると測定が開始され, T Stopに信号が入ると測定が止まり, Acceptに信号が入るまでが次の測定が始まらないインターバルの時間となっている.
 
 \section{MPPCにおけるゲインの個体差}
-MPPCの信号をEASIROCで見ると図4.9のようになる.
+MPPCの信号をEASIROCで見ると図\ref{fig:mu_mppc}のようになる.
 \begin{figure}[H]
     \centering
     \includegraphics[height=6cm]{img/mppc_gain.jpg}
     \caption{宇宙線$\mu$粒子のMPPCにおける信号}
+    \label{fig:mu_mppc}
 \end{figure}
-図4.9は宇宙線$\mu$粒子が検出器に入射したときのMPPCの信号をEASIROCを用いて読み出した時のエネルギーのヒストグラムである.
+図\ref{fig:mu_mppc}は宇宙線$\mu$粒子が検出器に入射したときのMPPCの信号をEASIROCを用いて読み出した時のエネルギーのヒストグラムである.
 測定によって得られたデータは各チャンネル毎に12bit (4096段階) の強度を持っている.ここでは12bitを0から4095までの整数で表すことにし, その値のことをADC値と呼ぶ.
 ADC値はMPPCから得られた信号をEASIROCが増幅, 整形しAD変換を行うことで得られた値である.
 荷電粒子が通過したシンチレータは荷電粒子からエネルギーを受け取り、受け取ったエネルギー分のX線を放出する。シンチレータが放出したX線は波長変換ファイバーによってMPPCへと到達する。
@@ -127,16 +136,18 @@ ADC値が850付近のピークはペデスタルである.
 それぞれのMPPCに同じ電圧をかけても個体差により波高が異なるので図4.9における真ん中のピークの位置も異なる.
 今回の実験では粒子が通ったと判定するためのしきい値を同じくらいの値で決定するために, 宇宙線$\mu$粒子を用いてキャリブレーションを行い信号のピークの位置を揃えた.
 電圧を変えて3回測定し, ヒストグラムをランダウ分布でフィットしそれぞれのチャンネルのピークの位置を求めて同じ電圧をかけた時にピークの位置が同じ位置になるようにInputDACの値を調整した.
-図4.10が揃える前のチャンネルごとのピークの位置で, 図4.11が揃えた後の図である.
+図\ref{fig:gain_before}が揃える前のチャンネルごとのピークの位置で, 図\ref{fig:gain_after}が揃えた後の図である.
 \begin{figure}[H]
     \begin{minipage}[b]{0.47\linewidth}
         \centering
         \includegraphics[height=5cm]{img/gain_before.jpg}
         \caption{ゲインを揃える前のピークのADC値}
+        \label{fig:gain_before}
     \end{minipage}
     \begin{minipage}[b]{0.47\linewidth}
         \centering
         \includegraphics[height=5cm]{img/gain_after.jpg}
         \caption{ゲインを揃えた後のピークのADC値}
+        \label{fig:gain_after}
     \end{minipage}
 \end{figure}

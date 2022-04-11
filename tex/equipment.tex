@@ -2,19 +2,19 @@
 \section{探索装置の概要}
 今回の実験に用いた探索装置の概略図及び座標軸を図\ref{fig:arrangement}に, $Y$方向から見た図を図\ref{fig:y_arrangement}に示す.
 
+
 \begin{figure}[H]
-    \begin{minipage}[b]{0.47\linewidth}
-        \centering
-        \includegraphics[height=3.5cm]{img/equipment.jpg}
-        \caption{探索装置の概略図}
-        \label{fig:arrangement}
-    \end{minipage}
-    \begin{minipage}[b]{0.47\linewidth}
-        \centering
-        \includegraphics[height=4.3cm]{img/equipment_y.jpg}
-        \caption{Y方向から見た装置}
-        \label{fig:y_arrangement}
-    \end{minipage}
+    \centering
+    \includegraphics[height=5cm]{img/equipment.jpg}
+    \caption{探索装置の概略図}
+    \label{fig:arrangement}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{img/equipment_y.jpg}
+    \caption{Y方向から見た装置}
+    \label{fig:y_arrangement}
 \end{figure}
 
 実験装置は, 2cmのアルミ板を2cm間隔で8段積み上げている.
@@ -32,6 +32,7 @@
 \subsection{波長変換ファイバー}
 波長変換ファイバーはプラスチックシンチレータからの光を吸収し, 光検出器の感度が良い波長(400～500nm)に変換する.
 直径1.2mmのものを使用し, 装置片側の基盤に取り付けた光検出器にプラスチックシンチレータからの光を導いた.
+図\ref{fig:fiber}のように2枚重ねたシンチレータは逆側から光を導いた。
 
 \begin{figure}[H]
     \centering
@@ -79,10 +80,9 @@ Amp, Shaper, Discriminator が内蔵されており, 光電子数の情報をADC
 図\ref{fig:easiroc}はMPPCにLEDの光をあて, EASIROCを用いて読み出した信号の例である.
 \\
 MPPC にかける電圧はEASIROCによる全チャンネル一律の値の$V_0$ と, DAC からの出力電圧との間の電圧を MPPC にかけることによりコントロールした.
-DACの入力を$n_{DAC}$とすると
-Input DACによりコントロールする電圧($V_i$)は,
+DACの入力を$n_{DAC}$とすると、Input DACによりコントロールする電圧($V_i$)は,
 \begin{equation}
-    V_i = -0.0195(InputDAC) + 9.4479
+    V_i = -0.0195(n_{DAC}) + 9.4479
 \end{equation}
 である.
 また, $V_i$と$V_0$とBias Voltage($V$)の関係は
@@ -132,11 +132,12 @@ Acceptに信号が入ると信号をデジタル値として読み出す。読�
 測定によって得られたデータは各チャンネル毎に12bit (4096段階) の強度を持っている.ここでは12bitを0から4095までの整数で表すことにし, その値のことをADC値と呼ぶ.
 ADC値はMPPCから得られた信号をEASIROCが増幅, 整形しAD変換を行うことで得られた値である.
 荷電粒子が通過したシンチレータは荷電粒子からエネルギーを受け取り、受け取ったエネルギー分のX線を放出する。シンチレータが放出したX線は波長変換ファイバーによってMPPCへと到達する。
-ADC値はMPPCからの信号強度(光電子数), すなわち荷電粒子がシンチレータに渡したエネルギーにおおむね比例している量である.
+ADC値はオフセットを除けばMPPCからの信号強度(光電子数), すなわち荷電粒子がシンチレータに渡したエネルギーにおおむね比例している量である.
 \\
 EASIROCのADC値は強度0のとき850付近を示すので、1番左のピークはペデスタルであると分かる。
 ADC値3500付近は光電子数が多くサチュレーションしている.\\
-MPPCに同じ電圧をかけて$\mu$粒子を測定すると各チャンネルで同じところにピークが立つことが期待されるが、MPPCの個体差により波高が異なるので図\ref{fig:mu_mppc}における電離損失に対応するピーク(ADC値1600付近)の位置も異なる.
+MPPCに同じ電圧をかけて$\mu$粒子を測定するとシンチレータの中で$\mu$粒子が最小電離損失をして、飛跡の長さが一定であれば、平均値はほぼ一定になるので各チャンネルで同じところにピークが立つことが期待される。
+しかしMPPCの個体差により波高が異なるので図\ref{fig:mu_mppc}における電離損失に対応するピーク(ADC値1600付近)の位置も異なる.
 今回の実験では粒子が通ったと判定するためのしきい値を同じくらいの値で決定するために, 宇宙線$\mu$粒子を用いてキャリブレーションを行い信号のピークの位置を揃えた.
 電圧を変えて3回測定し, ヒストグラムをランダウ分布でフィットしそれぞれのチャンネルのピークの位置を求めて同じ電圧をかけた時にピークの位置が同じ位置になるようにInputDACの値を調整した.
 図\ref{fig:gain_before}が揃える前のチャンネルごとのピークの位置で, 図\ref{fig:gain_after}が揃えた後の図である.

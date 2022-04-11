@@ -6,7 +6,7 @@ Geant4 とは物質中を通過する粒子の物理相互作用をモンテカ�
 \section{本実験での$\mu$粒子シミュレーション}
 宇宙線発生シミュレーションCRYを用いて$\mu$粒子を生成した.
 装置のパラメーターは
-\begin{quote}
+\begin{quote}[H]
     \begin{itemize}
         \item トリガーシンチレータ126cm$\times$7cm$\times$1cmを7度ずつ傾けて横に3枚
         \item シンチレータ75cm$\times$4cm$\times$1cmを横に4枚, 縦に8層
@@ -15,6 +15,21 @@ Geant4 とは物質中を通過する粒子の物理相互作用をモンテカ�
 \end{quote}
 としてトリガーシンチレータのすぐ下からトリガーシンチレータの大きさの範囲で$10^{7}$イベントの$\mu$粒子を発生させた.
 \\
+\begin{figure}[H]
+    \begin{minipage}[b]{0.47\linewidth}
+        \centering
+        \includegraphics[height=5cm]{img/muon_energy_distribution.pdf}
+        \caption{CRYによって生成した$\mu$粒子のエネルギー分布}
+        \label{fig:muon_energy_distribution}
+    \end{minipage}
+    \begin{minipage}[b]{0.47\linewidth}
+        \centering
+        \includegraphics[height=5cm]{img/muon_degree_distribution.pdf}
+        \caption{CRYによって生成した$\mu$粒子の角度分布}
+        \label{fig:muon_degree_distribution}
+    \end{minipage}
+\end{figure}
+
 今回シミュレーションを行った目的としては, 検出器内での光生成反応がどれくらいの割合で発生するのか求めることである.
 
 \section{シミュレーション結果}

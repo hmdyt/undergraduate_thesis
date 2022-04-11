@@ -15,6 +15,8 @@ Geant4 とは物質中を通過する粒子の物理相互作用をモンテカ�
 \end{quote}
 としてトリガーシンチレータのすぐ下からトリガーシンチレータの大きさの範囲で$10^{7}$イベントの$\mu$粒子を発生させた.
 \\
+CRYによって生成した$\mu$粒子のうち、
+1番上のシンチレータに入射した粒子のエネルギー分布と角度分布がそれぞれ図\ref{fig:muon_energy_distribution}、図\ref{fig:muon_degree_distribution}である。
 \begin{figure}[H]
     \begin{minipage}[b]{0.47\linewidth}
         \centering
@@ -29,6 +31,9 @@ Geant4 とは物質中を通過する粒子の物理相互作用をモンテカ�
         \label{fig:muon_degree_distribution}
     \end{minipage}
 \end{figure}
+図\ref{fig:muon_energy_distribution}より、入射$\mu$粒子は2000MeVあたりのエネルギーを持ったものが多いがそれよりも高エネルギーな粒子も存在するということがわかる。
+図\ref{fig:muon_degree_distribution}においてdegree 0 は$z$軸正の方向を指しているので分布より斜め下向きに入射している粒子が多いことがわかる。
+また、ヒストグラムのエントリー数が約600万イベントであることよりトリガーシンチレータを通過してもすべての粒子が検出器に入射するわけではないということがわかる。
 
 今回シミュレーションを行った目的としては, 検出器内での光生成反応がどれくらいの割合で発生するのか求めることである.
 

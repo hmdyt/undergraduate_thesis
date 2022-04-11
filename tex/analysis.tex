@@ -1,4 +1,4 @@
-\chapter{解析}\label{analysis}
+\chapter{宇宙線ミューオンの解析}\label{analysis}
 測定データを用いてどのように光生成反応イベントを探索したかを説明する.
 
 \section{解析に用いたデータ}\label{sec:anal:data}
@@ -17,9 +17,9 @@
 
 \section{しきい値の設定}\label{sec:anal:threshold}
 \ref{sec:mppc_gain_diff}節の通り, ADC value は荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC valueに適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
-シンチレータがエネルギーを受け取らなかった時のADC value は本実験で用いたEASIROCにおいては典型的に800付近であったため(図\ref{fig:mu_mppc}, \ref{fig:threhist}), ADC value 800付近からある程度離れた値をしきい値とすることにした.
+図\ref{fig:mu_mppc}に示す分布のペデスタルによるピークからある程度離れた値をしきい値とすることにした.
 具体的には図\ref{fig:adc_eff}のようにADC value のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
-図\ref{fig:adc_eff}, \ref{fig:threhist} の赤線は実験に用いたADC valueのしきい値を示している.
+図\ref{fig:adc_eff}, \ref{fig:threhist} の緑線は実験に用いたADC valueのしきい値を示している.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5.0cm]{img/adc_eff.png}
@@ -65,7 +65,7 @@
 
 \section{光生成反応イベントの探索}
 \subsection{イベントセレクション}\label{sec:anal:eventcut}
-\ref{sec:anal:data}に示した測定データから光生成反応と考えられるイベントを以下に示す条件によってカットをかけた.
+\ref{sec:anal:data}に示した測定データから光生成反応と考えられるイベントを以下に示す条件によって選んだ。
 \begin{itemize}
     \item[(1)] 6層以上の層を荷電粒子が通った
     \item[(2)] 1, 2, 8層目で1つの荷電粒子が通った
@@ -89,11 +89,12 @@
     \label{tab:eventcut_val}
     \begin{tabular}{|c|c|}
         \hline
-        \begin{tabular}[c]{@{}c@{}}全イベント\\ 10000000\end{tabular}                     & \begin{tabular}[c]{@{}c@{}}カット後\\ 5759\end{tabular}                       \\ \hline
-        \begin{tabular}[c]{@{}c@{}}全イベント中でパイオンを含むイベント\\ 19\end{tabular} & \begin{tabular}[c]{@{}c@{}}カット後でパイオンを含むイベント\\ 14\end{tabular} \\ \hline
+        \begin{tabular}[c]{@{}c@{}}全イベント\\ 10000000\end{tabular}                                        & \begin{tabular}[c]{@{}c@{}}カット後\\ 5759\end{tabular}                                        \\ \hline
+        \begin{tabular}[c]{@{}c@{}}全イベント中でパイオンを含むイベント\\ 19 (純粋度 0.00019\%)\end{tabular} & \begin{tabular}[c]{@{}c@{}}カット後でパイオンを含むイベント\\ 14  (純粋度 0.24\%)\end{tabular} \\ \hline
     \end{tabular}
 \end{table}
-表\ref{tab:eventcut_val}によるとイベントセレクション前とイベントセレクション前でパイオンイベントの純粋度は0.00019\%から0.24\%に上昇していることがわかる.しかし, カット後のイベントにおけるパイオンイベントの純粋度が0.24\%というのはイベントセレクションでは取り除けなかったバックグラウンドの存在が示唆される.よって, \ref{sec:anal:eventcut}節で行ったイベントセレクションではバックグラインドが十分に取り除くことができなかったといえる.
+表\ref{tab:eventcut_val}における純粋度はイベントセレクションによって得られたイベントのうちパイオンを含むイベントの割合である.
+表\ref{tab:eventcut_val}によるとイベントセレクション前とイベントセレクション後でパイオンイベントの純粋度は0.00019\%から0.24\%に上昇していることがわかる.しかし, カット後のイベントにおけるパイオンイベントの純粋度が0.24\%というのはイベントセレクションによって得られたイベントの99\% 以上にパイオンでないイベント (バックグラウンド) を含んでしまっていることを意味している.よって, \ref{sec:anal:eventcut}節で行ったイベントセレクションではバックグラインドが十分に取り除くことができなかったといえる.
 
 \subsection{バックグラウンドの検討}\label{sec:anal:background}
 図\ref{fig:anal:bg01}は\ref{sec:eventcut_val}節で使用したシミュレーションデータから, イベントセレクションがパイオンイベントと間違えたイベントを可視化したものの例である.図\ref{fig:anal:bg01}に示すようなミューオンが検出器内の電子を弾くイベントが支配的であった.図\ref{fig:pion_electron_degrere}はシミュレーションによって得られた, ミューオンによって弾き出された電子とパイオンの角度分布である.青色, 赤色で表されるヒストグラムはそれぞれ光生成反応によって生成されたパイオン, ミューオンによって蹴り出された電子の散乱角分布を示している.角度は上空方向を正としたベクトル(図\ref{fig:arrangement}におけるz軸)と粒子の運動量ベクトルの内積によって定義される.本研究において用いたイベントセレクションでは主に, 入射ミューオンと同じ方向へ飛ぶパイオンを検出しようとしたために図\ref{fig:pion_electron_degrere}における$\pi$ラジアン付近の探索をしていた.そのために電子散乱におけるイベントがイベントセレクション後のイベントに含まれていたと考えられる.

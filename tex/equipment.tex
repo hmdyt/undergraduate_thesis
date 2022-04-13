@@ -18,10 +18,17 @@
 \end{figure}
 
 実験装置は, 2cmのアルミ板を2cm間隔で8段積み上げている.
-アルミ板の各層には, 通過粒子の$xy$平面での座標を特定するためプラスチックシンチレータを逆側に7度ずつ傾けたものを2層ずつアルミの間に配置している.
+アルミ板の各層には, 通過粒子の$xy$平面での座標を特定するため、図\ref{fig:fiber}のようにプラスチックシンチレータを逆側に7度ずつ傾けたものを2層ずつアルミの間に配置している.
 この2次元飛跡検出器を$z$方向に8段重ねることで3次元飛跡検出器とし反応の探索を行った.
 プラスチックシンチレータからの光は波長変換ファイバーによって伝えられ, 光検出器であるMPPCを用い検出しEASIROC MODULEを用いてデジタル信号として読み出された.
 また検出装置に入射する$\mu$粒子を検出装置の上方から入射し検出器を通過するものに制限するため, 装置上部にプラスチックシンチレータを3枚配置しトリガーシンチレータとして用いた.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=7cm]{img/Scinti.jpeg}
+    \caption{プラスチックシンチレータと光ファイバー}
+    \label{fig:fiber}
+\end{figure}
 
 \section{装置詳細}
 \subsection{プラスチックシンチレータ}
@@ -34,13 +41,6 @@
 直径1.2mmのものを使用し, 装置片側の基盤に取り付けた光検出器にプラスチックシンチレータからの光を導いた.
 図\ref{fig:fiber}のように2枚重ねたシンチレータは逆側から光を導いた.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=5cm]{img/Scinti.jpeg}
-    \caption{プラスチックシンチレータと光ファイバー}
-    \label{fig:fiber}
-\end{figure}
-
 \subsection{MPPC}
 光検出器として, MPPC(Multi Pixel Photon Counter)を用いた.
 MPPCは受光面が複数のピクセルからなるフォトンカウンティングデバイスである.各ピクセルは高い増幅率を持つ半導体光検出器である.
@@ -48,6 +48,7 @@ MPPCは受光面が複数のピクセルからなるフォトンカウンティ�
 ピクセルは複数あり, 波高は重ね合わせて出力される.
 この波高から検出した光電子数を見積もることができる.
 このMPPC64個を基板に取り付け, ゴミコネクタを用いてプラスチックシンチレータの片側から出ている波長変換ファイバーと接続した.
+ゴミコネクタはプラスチックの2つのパーツからなるコネクタでファイバーの径と同じ1.5mmの穴が開いており、ファイバーとMPPCを密着して接続することで光漏れを防ぐ。
 
 \begin{figure}[H]
     \begin{minipage}[b]{0.47\linewidth}
@@ -70,7 +71,7 @@ MPPCからの信号の読み出しにEASIROC(Extended Analogue Silicon PM Integr
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=5cm]{img/mppc_easiroc.jpg}
+    \includegraphics[height=6cm]{img/mppc_easiroc.jpg}
     \caption{EASIROCを用いて読み出したMPPCの信号}
     \label{fig:easiroc}
 \end{figure}
@@ -98,7 +99,7 @@ InputDACを調整することで各MPPCへのBias Voltageを調整した.
 トリガーシンチレータの大きさは検出器に入射する$\mu$粒子の方向を限定するため, 検出器の$x$方向の大きさより少し小さく配置している.
 \begin{figure}[H]
     \centering
-    \includegraphics[height=5cm]{img/Trigger.jpeg}
+    \includegraphics[height=6cm]{img/Trigger.jpeg}
     \caption{トリガーシンチレータの配置}
     \label{fig:trigger}
 \end{figure}

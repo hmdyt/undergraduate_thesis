@@ -16,10 +16,10 @@
 \end{table}
 
 \section{しきい値の設定}\label{sec:anal:threshold}
-\ref{sec:mppc_gain_diff}節の通り, ADC value は荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC valueに適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
+\ref{sec:mppc_gain_diff}節の通り, ADC値は荷電粒子がシンチレータに渡したエネルギーに比例している量であるのでADC値に適切なしきい値を設けることでシンチレータ毎に荷電粒子が通過したかどうかを判別できる.
 図\ref{fig:mu_mppc}に示す分布のペデスタルによるピークからある程度離れた値をしきい値とすることにした.
-具体的には図\ref{fig:adc_eff}のようにADC value のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
-図\ref{fig:adc_eff}, \ref{fig:threhist} の緑線は実験に用いたADC valueのしきい値を示している.
+具体的には図\ref{fig:adc_eff}のようにADC値のしきい値を800から1500まで1刻みで変更した時の検出効率を計算し, チャンネル毎にeffeciencyが大きく下がらない程度のしきい値を探すことでしきい値を決定した.
+図\ref{fig:adc_eff}, \ref{fig:threhist} の緑線は実験に用いたADC値のしきい値を示している.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5.0cm]{img/adc_eff.png}
@@ -29,7 +29,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[height=5.0cm]{img/pedestal.png}
-    \caption{宇宙線による ADC value の分布}
+    \caption{宇宙線による ADC値の分布}
     \label{fig:threhist}
 \end{figure}
 
@@ -61,7 +61,7 @@
 \subsection{ヒット情報作成の問題点}
 \ref{subsec:anal:make_hit}節で説明したヒット情報の計算方法には問題点が存在する.
 1層に2個以上の荷電粒子が通過した場合に作成されたヒット情報からは飛跡を再構成できないという点である.
-例えば, 図\ref{fig:igata02}に示すようにシンチレータから得られたADC valueがしきい値を超えた場合は赤く塗られる箇所(荷電粒子が通過したと考えられる場所)が余分にできてしまい, 荷電粒子の本当の飛跡がわからなくなってしまう.本実験では光生成反応を探索しているため探索対象は複数の粒子の飛跡であるが, この問題点は複数の粒子の飛跡の再構成を難しくしてしまっている.
+例えば, 図\ref{fig:igata02}に示すようにシンチレータから得られたADC値がしきい値を超えた場合は赤く塗られる箇所(荷電粒子が通過したと考えられる場所)が余分にできてしまい, 荷電粒子の本当の飛跡がわからなくなってしまう.本実験では光生成反応を探索しているため探索対象は複数の粒子の飛跡であるが, この問題点は複数の粒子の飛跡の再構成を難しくしてしまっている.
 
 \section{光生成反応イベントの探索}
 \subsection{イベントセレクション}\label{sec:anal:eventcut}
